@@ -21,4 +21,4 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: mvn --batch-mode clean verify -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn --batch-mode clean verify -Dregistry=https://maven.pkg.github.com/minova-afis/aero.minova.spring.maven.root -Dtoken=$GH_TOKEN
