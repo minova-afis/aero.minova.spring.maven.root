@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>spring.maven.root</artifactId>
 	<version>1.0.0</version>
@@ -6,13 +8,12 @@
 	<parent>
 		<groupId>aero.minova</groupId>
 		<artifactId>maven.root</artifactId>
-		<version>1.2.3</version>
+		<version>1.2.6</version>
 	</parent>
-	<properties>
-		<maven.javadoc.skip>true</maven.javadoc.skip>
-		<java.version>11</java.version>
-		<spring.boot.version>2.2.5.RELEASE</spring.boot.version>
-	</properties>
+	<scm>
+		<connection>scm:git:https://github.com/minova-afis/aero.minova.spring.maven.root.git</connection>
+		<tag>HEAD</tag>
+	</scm>
 	<profiles>
 		<profile>
 			<id>java</id>
@@ -20,7 +21,8 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<java.version>1.8</java.version>
+				<maven.javadoc.skip>true</maven.javadoc.skip>
+				<java.version>11</java.version>
 			</properties>
 			<build>
 				<plugins>
@@ -41,6 +43,9 @@
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
+			<properties>
+				<spring.boot.version>2.2.5.RELEASE</spring.boot.version>
+			</properties>
 			<dependencyManagement>
 				<dependencies>
 					<dependency>
