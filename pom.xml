@@ -6,8 +6,8 @@
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
 	<parent>
-		<groupId>aero.minova</groupId>
-		<artifactId>maven.root</artifactId>
+		<groupId>aero.minova.maven</groupId>
+		<artifactId>root</artifactId>
 		<version>1.2.11</version>
 	</parent>
 	<scm>
