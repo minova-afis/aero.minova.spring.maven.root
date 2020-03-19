@@ -1,0 +1,6 @@
+# aero.minova.spring.maven.root
+
+## Einführung
+Diese POM sollte als parent in jedem Spring Boot Projekt direkt oder indirekt verwendet werden.
+Es wird Java 11 verwendet,
+da dies die link:https://en.wikipedia.org/wiki/Java_version_history[aktuelle LTS Version] ist.
