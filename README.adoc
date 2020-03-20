@@ -4,3 +4,32 @@
 Diese POM sollte als parent in jedem Spring Boot Projekt direkt oder indirekt verwendet werden.
 Es wird Java 11 verwendet,
 da dies die link:https://en.wikipedia.org/wiki/Java_version_history[aktuelle LTS Version] ist.
+
+## Spring Boot Projekt in Maven und mit Java aufsetzen.
+
+Man erstellt sich eine POM mit folgender Vorlage, welche des Projekt definiert.
+In der Vorlage muss noch der Name des Projektes angepasst werden.
+Als nächstes übernimmt man noch die Datei `.gitignore` mit deren Hilfe unwichtige Dateien
+bei der Versionverwaltung ignoriert werden.
+
+[source,xml]
+--------
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>spring.maven.root</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<parent>
+		<groupId>aero.minova</groupId>
+		<artifactId>[Name des Projektes]</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<scm>
+		<connection>scm:git:https://github.com/minova-afis/aero.minova.[Name des Projektes].git</connection>
+		<tag>HEAD</tag>
+	</scm>
+</project>
+
+--------
