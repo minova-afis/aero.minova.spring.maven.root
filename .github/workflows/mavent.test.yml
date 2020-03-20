@@ -23,6 +23,4 @@ jobs:
     - name: test
       run: cat $HOME/.m2/settings.xml
     - name: Build with Maven
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: mvn clean verify --batch-mode -P repo-github
