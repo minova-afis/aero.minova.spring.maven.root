@@ -23,6 +23,7 @@ jobs:
         server-id: github
     - name: test
       run: cat $HOME/.m2/settings.xml
+      run: printenv
     - name: Build with Maven
       env:
         GITHUB_TOKEN: ${{ github.token }}
