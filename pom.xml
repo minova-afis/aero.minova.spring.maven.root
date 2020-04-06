@@ -52,8 +52,9 @@
 			<build>
 				<plugins>
 					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-compiler-plugin</artifactId>
-						<version>3.8</version>
+						<version>3.8.1</version>
 						<configuration>
 							<source>${java.version}</source>
 							<target>${java.version}</target>
@@ -85,10 +86,15 @@
 			<build>
 				<plugins>
 					<plugin>
-						<!-- Erstellt ausführbare jar. -->
+						<!- Erstellt ausführbare jar. >
 						<groupId>org.springframework.boot</groupId>
 						<artifactId>spring-boot-maven-plugin</artifactId>
 						<version>${spring.boot.version}</version>
+						<configuration>
+							<!- Properties Launcher in der Jar verwenden damit man mit "-D*" 
+								JVM-Parameter bspw. die loader.path Property setzen kann. ->
+							<layout>ZIP</layout>
+						</configuration>
 						<executions>
 							<execution>
 								<goals>
