@@ -5,6 +5,9 @@ Diese POM sollte als parent in jedem Spring Boot Projekt direkt oder indirekt ve
 Es wird Java 11 verwendet,
 da dies die link:https://en.wikipedia.org/wiki/Java_version_history[aktuelle LTS Version] ist.
 
+Unter Windows mit Chocolatey kann Java 11 über link:https://chocolatey.org/packages/openjdk11[choco install openjdk11] installiert werden.
+Das JDK wird standardmäßig unter `C:\Program Files\OpenJDK\openjdk-11*\` installiert.
+
 ## Spring Boot Projekt in Maven und mit Java aufsetzen.
 
 Man erstellt sich eine POM mit folgender Vorlage, welche des Projekt definiert.
