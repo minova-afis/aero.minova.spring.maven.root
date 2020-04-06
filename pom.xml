@@ -86,13 +86,13 @@
 			<build>
 				<plugins>
 					<plugin>
-						<!- Erstellt ausführbare jar. >
+						<!-- Erstellt ausführbare jar. -->
 						<groupId>org.springframework.boot</groupId>
 						<artifactId>spring-boot-maven-plugin</artifactId>
 						<version>${spring.boot.version}</version>
 						<configuration>
-							<!- Properties Launcher in der Jar verwenden damit man mit "-D*" 
-								JVM-Parameter bspw. die loader.path Property setzen kann. ->
+							<!-- Properties Launcher in der Jar verwenden damit man mit "-D*" 
+								JVM-Parameter bspw. die loader.path Property setzen kann. -->
 							<layout>ZIP</layout>
 						</configuration>
 						<executions>
