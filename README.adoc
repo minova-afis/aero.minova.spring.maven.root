@@ -36,3 +36,39 @@ bei der Versionverwaltung ignoriert werden.
 </project>
 
 --------
+
+## Code Guidelines
+
+### Optionale Attribute
+
+Optionals können ein gutes Mittel zu sein, um die Optionalität von Werten darzustellen (Billion Dollar Mistake).
+Allerdings werden diese bei DTOs und DAOs häufig nicht richtig unterstützt und sollten für diese auch nicht verwendet werden.
+Bei DAOs gibt es eine Ausnahme, indem man beim Getter des betroffenen Attibutes ein Optional zurückgeben kann.
+
+[source,java]
+--------
+@Entity
+@Data
+@NoArgsConstructor
+public class MovementChange {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long keyLong;
+	@OneToOne
+	private Movement original;
+	@OneToOne
+	private Movement cancellation;
+	@OneToOne(optional = true)
+	private Movement correction;
+
+	public Optional<Movement> getCorrection() {
+		return Optional.ofNullable(correction);
+	}
+}
+--------
+
+Wenn man Optionals nicht verwendet, sollte man das betroffene Attribut nach Möglichkeit als optional annotieren:
+
+* In DAOs: @OneToOne(optional = true)
+* In DTOs: @org.springframework.lang.Nullable
+
