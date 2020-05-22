@@ -4,9 +4,9 @@
 	<version>1.1.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<parent>
-		<groupId>ch.minova</groupId>
+		<groupId>aero.minova</groupId>
 		<artifactId>maven.root</artifactId>
-		<version>1.3.5</version>
+		<version>1.5.1</version>
 	</parent>
 	<scm>
 		<connection>scm:git:https://github.com/minova-afis/aero.minova.spring.maven.root.git</connection>
@@ -76,16 +76,4 @@
 			</build>
 		</profile>
 	</profiles>
-	<repositories>
-		<repository>
-			<id>github</id>
-			<url>https://maven.pkg.github.com/minova-afis/aero.minova.maven.root</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
 </project>
