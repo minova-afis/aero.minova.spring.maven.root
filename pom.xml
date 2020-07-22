@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>spring.maven.root</artifactId>
 	<version>1.1.2-SNAPSHOT</version>
@@ -14,7 +16,7 @@
 	</scm>
 	<profiles>
 		<profile>
-			<id>java-std-test</id>
+			<id>java-std</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
@@ -25,6 +27,29 @@
 					<optional>true</optional>
 				</dependency>
 			</dependencies>
+		</profile>
+		<profile>
+			<id>java-maven-junit-5-fixes</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<!-- Nicht jede Maven-Version kann ohne weiter Hilfe mit Junit 5 umgehen. -->
+			<!-- Hiermit wird sichergestellt, dass Junit 5 funktioniert. -->
+			<!-- Quelle: https://dzone.com/articles/why-your-junit-5-tests-are-not-running-under-maven -->
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.22.0</version>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-failsafe-plugin</artifactId>
+						<version>2.22.0</version>
+					</plugin>
+				</plugins>
+			</build>
 		</profile>
 		<profile>
 			<id>spring-boot</id>
