@@ -18,6 +18,7 @@
             </repositories>
         </profile>
     </profiles>
+
     <servers>
         <server>
             <id>github</id>
