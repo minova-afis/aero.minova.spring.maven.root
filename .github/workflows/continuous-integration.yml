@@ -1,12 +1,31 @@
-name: CI
+name: Continous Integration
 on:
   push:
-    branches:
-      - '**'
+    branches: [ master ]
   pull_request:
-    branches: [ master main ]
+    branches: [ master ]
   workflow_dispatch:
 jobs:
   build:
-    uses: minova-afis/aero.minova.github.workflows/.github/workflows/java-continuous-integration.yml@main
-    secrets: inherit
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java-version: [ '11', '17' ]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: ${{ matrix.java-version }}
+          java-package: 'jdk'
+      - name: Build
+        run: |
+          cd $GITHUB_WORKSPACE
+          mvn --batch-mode clean verify -P repo-github \
+          -Dusername=$GITHUB_ACCESS_TOKEN \
+          -Dpassword=$GITHUB_ACCESS_TOKEN \
+          --settings .github/settings.xml
+        env:
+          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}
+          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}
+          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}
