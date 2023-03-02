@@ -6,7 +6,7 @@
     <parent>
         <groupId>aero.minova</groupId>
         <artifactId>maven.root</artifactId>
-        <version>12.4.4</version>
+        <version>12.4.6</version>
     </parent>
 
     <scm>
@@ -23,9 +23,11 @@
                     <name>!skipSpringBootProfile</name>
                 </property>
             </activation>
+
             <properties>
                 <spring.boot.version>3.0.3</spring.boot.version>
             </properties>
+
             <dependencyManagement>
                 <dependencies>
                     <dependency>
@@ -37,6 +39,7 @@
                     </dependency>
                 </dependencies>
             </dependencyManagement>
+
             <dependencies>
                 <dependency>
                     <groupId>org.springframework.boot</groupId>
@@ -45,6 +48,7 @@
                 </dependency>
             </dependencies>
         </profile>
+
         <profile>
             <id>spring-boot-single-executable</id>
             <build>
