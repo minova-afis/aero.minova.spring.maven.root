@@ -9,7 +9,13 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    assignees:
+      - "martins-1992"
+      - "scholz-afis"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
+    assignees:
+      - "martins-1992"
+      - "scholz-afis"
