@@ -6,7 +6,7 @@
     <parent>
         <groupId>aero.minova</groupId>
         <artifactId>maven.root</artifactId>
-        <version>12.4.9</version>
+        <version>12.4.10</version>
     </parent>
 
     <scm>
