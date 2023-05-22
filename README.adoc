@@ -5,7 +5,7 @@ Diese POM sollte als parent in jedem Spring Boot Projekt direkt oder indirekt ve
 Es wird Java 17 verwendet,
 da dies die link:https://en.wikipedia.org/wiki/Java_version_history[aktuelle LTS Version] ist.
 
-Unter Windows mit Chocolatey kann Java 17 über link:https://chocolatey.org/packages/openjdk11[choco install openjdk11] installiert werden.
+Unter Windows mit Chocolatey kann Java 17 über link:https://chocolatey.org/packages/openjdk17[choco install openjdk17] installiert werden.
 Das JDK wird standardmäßig unter `C:\Program Files\OpenJDK\openjdk-17*\` installiert.
 
 ## Spring Boot Projekt in Maven und mit Java aufsetzen.
