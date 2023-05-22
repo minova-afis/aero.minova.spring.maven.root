@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>spring.maven.root</artifactId>
-    <version>1.4.13</version>
+    <version>1.4.14-SNAPSHOT</version>
     <packaging>pom</packaging>
     <parent>
         <groupId>aero.minova</groupId>
@@ -11,7 +11,7 @@
 
     <scm>
         <connection>scm:git:https://github.com/minova-afis/aero.minova.spring.maven.root.git</connection>
-        <tag>v1.4.13</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <profiles>
