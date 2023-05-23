@@ -13,7 +13,7 @@ Das JDK wird standardmäßig unter `C:\Program Files\OpenJDK\openjdk-17*\` insta
 
 ## Beispiele
 
-* [CAS]https://github.com/minova-afis/aero.minova.cas] TODO Reiner
+* [CAS](https://github.com/minova-afis/aero.minova.cas) TODO Reiner
 * [Fuelportal](https://github.com/minova-afis/aero.minova.afis.fuelportal) TODO Reiner
 * [ADM](https://github.com/minova-afis/aero.minova.afis.dispatch.manager) TODO Avots
 
