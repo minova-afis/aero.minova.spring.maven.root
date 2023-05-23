@@ -1,4 +1,4 @@
-# aero.minova.spring.maven.root
+# Basis für Minova-Dienste
 
 > Dies ist die verpflichtende Basis für alle Applikationen und Dienste.
 > Dies wird nicht für Plugins, Extensions und co. verwendet.
