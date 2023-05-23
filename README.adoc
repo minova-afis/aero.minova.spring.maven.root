@@ -1,9 +1,10 @@
 # aero.minova.spring.maven.root
 
-> Verpflichtende Basis für alle Applikationen und Dienste
+> Dies ist die verpflichtende Basis für alle Applikationen und Dienste.
+> Dies wird nicht für Plugins, Extensions und co. verwendet.
 
 ## Einführung
-Diese POM sollte als parent in jedem Spring Boot Projekt direkt oder indirekt verwendet werden.
+Diese POM sollte als parent in jedem Dienst oder Applikation direkt verwendet werden.
 Es wird Java 17 verwendet,
 da dies die link:https://en.wikipedia.org/wiki/Java_version_history[aktuelle LTS Version] ist.
 
@@ -28,7 +29,7 @@ bei der Versionverwaltung ignoriert werden.
 	<packaging>pom</packaging>
 	<parent>
 		<groupId>aero.minova</groupId>
-		<artifactId>maven.root</artifactId>
+		<artifactId>spring.maven.root</artifactId>
 		<version>[Aktuelle Version]</version>
 	</parent>
 	<scm>
@@ -36,8 +37,11 @@ bei der Versionverwaltung ignoriert werden.
 		<tag>HEAD</tag>
 	</scm>
 </project>
-
 --------
+
+## Angabe von Abhängigkeiten
+
+TODO
 
 ## Code Guidelines
 
@@ -70,7 +74,6 @@ public class MovementChange {
 --------
 
 Wenn man Optionals nicht verwendet, sollte man das betroffene Attribut nach Möglichkeit als optional annotieren:
-
 * In DAOs: @OneToOne(optional = true)
 * In DTOs: @org.springframework.lang.Nullable
 
