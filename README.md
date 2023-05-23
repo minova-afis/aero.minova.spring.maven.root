@@ -6,16 +6,16 @@
 ## Einführung
 Diese POM sollte als parent in jedem Dienst oder Applikation direkt verwendet werden.
 Es wird Java 17 verwendet,
-da dies die link:https://en.wikipedia.org/wiki/Java_version_history[aktuelle LTS Version] ist.
+da dies die [aktuelle LTS Version](https://en.wikipedia.org/wiki/Java_version_history) ist.
 
-Unter Windows mit Chocolatey kann Java 17 über link:https://chocolatey.org/packages/openjdk17[choco install openjdk17] installiert werden.
+Unter Windows mit Chocolatey kann Java 17 über [choco install openjdk17](https://chocolatey.org/packages/openjdk17) installiert werden.
 Das JDK wird standardmäßig unter `C:\Program Files\OpenJDK\openjdk-17*\` installiert.
 
 ## Beispiele
 
-* (CAS)[https://github.com/minova-afis/aero.minova.cas] TODO Reiner
-* (Fuelportal)[https://github.com/minova-afis/aero.minova.afis.fuelportal] TODO Reiner
-* (ADM)[https://github.com/minova-afis/aero.minova.afis.dispatch.manager] TODO Avots
+* [CAS]https://github.com/minova-afis/aero.minova.cas] TODO Reiner
+* [Fuelportal](https://github.com/minova-afis/aero.minova.afis.fuelportal) TODO Reiner
+* [ADM](https://github.com/minova-afis/aero.minova.afis.dispatch.manager) TODO Avots
 
 ## Spring Boot Projekt in Maven und mit Java aufsetzen.
 
@@ -24,8 +24,7 @@ In der Vorlage muss noch der Name des Projektes angepasst werden.
 Als nächstes übernimmt man noch die Datei `.gitignore` mit deren Hilfe unwichtige Dateien
 bei der Versionverwaltung ignoriert werden.
 
-[source,xml]
---------
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -43,7 +42,7 @@ bei der Versionverwaltung ignoriert werden.
 		<tag>HEAD</tag>
 	</scm>
 </project>
---------
+```
 
 ## Angabe von Abhängigkeiten
 
@@ -57,8 +56,7 @@ Optionals können ein gutes Mittel zu sein, um die Optionalität von Werten darz
 Allerdings werden diese bei DTOs und DAOs häufig nicht richtig unterstützt und sollten für diese auch nicht verwendet werden.
 Bei DAOs gibt es eine Ausnahme, indem man beim Getter des betroffenen Attibutes ein Optional zurückgeben kann.
 
-[source,java]
---------
+```java
 @Entity
 @Data
 @NoArgsConstructor
@@ -77,7 +75,7 @@ public class MovementChange {
 		return Optional.ofNullable(correction);
 	}
 }
---------
+```
 
 Wenn man Optionals nicht verwendet, sollte man das betroffene Attribut nach Möglichkeit als optional annotieren:
 * In DAOs: @OneToOne(optional = true)
