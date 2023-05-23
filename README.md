@@ -13,10 +13,10 @@ Das JDK wird standardmäßig unter `C:\Program Files\OpenJDK\openjdk-17*\` insta
 
 ## Beispiele
 
-* [CAS](https://github.com/minova-afis/aero.minova.cas) TODO Reiner
-* [Fuelportal](https://github.com/minova-afis/aero.minova.afis.fuelportal) TODO Reiner
-* [ADM](https://github.com/minova-afis/aero.minova.afis.dispatch.manager) TODO Avots
-* [AirportCollector](https://github.com/minova-afis/ch.minova.service.airportcollector) TODO Kerstin
+* [CAS](https://github.com/minova-afis/aero.minova.cas) TODO von Reiner
+* [Fuelportal](https://github.com/minova-afis/aero.minova.afis.fuelportal) TODO von Reiner
+* [ADM](https://github.com/minova-afis/aero.minova.afis.dispatch.manager) TODO von Martins
+* [AirportCollector](https://github.com/minova-afis/ch.minova.service.airportcollector) TODO von Kerstin
 
 ## Spring Boot Projekt in Maven und mit Java aufsetzen.
 
