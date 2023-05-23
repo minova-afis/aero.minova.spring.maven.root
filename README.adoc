@@ -1,5 +1,7 @@
 # aero.minova.spring.maven.root
 
+> Verpflichtende Basis für alle Applikationen und Dienste
+
 ## Einführung
 Diese POM sollte als parent in jedem Spring Boot Projekt direkt oder indirekt verwendet werden.
 Es wird Java 17 verwendet,
