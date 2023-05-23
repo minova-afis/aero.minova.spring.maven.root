@@ -11,6 +11,12 @@ da dies die link:https://en.wikipedia.org/wiki/Java_version_history[aktuelle LTS
 Unter Windows mit Chocolatey kann Java 17 über link:https://chocolatey.org/packages/openjdk17[choco install openjdk17] installiert werden.
 Das JDK wird standardmäßig unter `C:\Program Files\OpenJDK\openjdk-17*\` installiert.
 
+## Beispiele
+
+* [CAS](https://github.com/minova-afis/aero.minova.cas) TODO Reiner
+* [Fuelportal](https://github.com/minova-afis/aero.minova.afis.fuelportal) TODO Reiner
+* [ADM](https://github.com/minova-afis/aero.minova.afis.dispatch.manager) TODO Avots
+
 ## Spring Boot Projekt in Maven und mit Java aufsetzen.
 
 Man erstellt sich eine POM mit folgender Vorlage, welche des Projekt definiert.
