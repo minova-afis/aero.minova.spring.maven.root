@@ -1,31 +1,12 @@
-name: Continous Integration
+name: build
+
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - '**'
   workflow_dispatch:
+
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        java-version: [ '17' ]
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: ${{ matrix.java-version }}
-          java-package: 'jdk'
-      - name: Build
-        run: |
-          cd $GITHUB_WORKSPACE
-          mvn --batch-mode clean verify -P repo-github \
-          -Dusername=$GITHUB_ACCESS_TOKEN \
-          -Dpassword=$GITHUB_ACCESS_TOKEN \
-          --settings .github/settings.xml
-        env:
-          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}
-          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}
-          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}
+  Build:
+    uses: minova-afis/aero.minova.os.github.workflows/.github/workflows/pom-continuous-integration.yml@main
+    secrets: inherit
