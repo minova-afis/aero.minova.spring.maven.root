@@ -8,5 +8,5 @@ on:
 
 jobs:
   Build:
-    uses: minova-afis/aero.minova.os.github.workflows/.github/workflows/pom-continuous-integration.yml@main
+    uses: minova-afis/aero.minova.os.github.workflows/.github/workflows/pom-continuous-integration.yml@scr_java_21_lts
     secrets: inherit

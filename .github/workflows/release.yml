@@ -8,7 +8,7 @@ on:
 
 jobs:
   Release:
-    uses: minova-afis/aero.minova.os.github.workflows/.github/workflows/release-pom.yml@main
+    uses: minova-afis/aero.minova.os.github.workflows/.github/workflows/release-pom.yml@scr_java_21_lts
     with:
       release-version: ${{ inputs.release-version }}
     secrets: inherit
