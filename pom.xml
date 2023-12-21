@@ -6,7 +6,7 @@
     <parent>
         <groupId>aero.minova</groupId>
         <artifactId>maven.root</artifactId>
-        <version>12.5.5</version>
+        <version>12.5.6</version>
     </parent>
 
     <scm>
@@ -25,7 +25,7 @@
             </activation>
 
             <properties>
-                <spring.boot.version>3.2.0</spring.boot.version>
+                <spring.boot.version>3.2.1</spring.boot.version>
             </properties>
 
             <dependencyManagement>
