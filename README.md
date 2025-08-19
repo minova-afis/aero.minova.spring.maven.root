@@ -42,12 +42,15 @@ bei der Versionverwaltung ignoriert werden.
 		<connection>scm:git:https://github.com/minova-afis/aero.minova.[Name des Projektes].git</connection>
 		<tag>HEAD</tag>
 	</scm>
+	<dependencies>
+		<dependency>
+			<groupId>aero.minova</groupId>
+			<artifactId>service</artifactId>
+			<version>12.11.0</version>
+		</dependency>
+	</dependencies>
 </project>
 ```
-
-## Angabe von Abhängigkeiten
-
-TODO
 
 ## Code Guidelines
 
