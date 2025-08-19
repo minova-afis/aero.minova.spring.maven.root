@@ -8,12 +8,10 @@
         <artifactId>maven.root</artifactId>
         <version>12.7.0</version>
     </parent>
-
     <scm>
         <connection>scm:git:https://github.com/minova-afis/aero.minova.spring.maven.root.git</connection>
         <tag>HEAD</tag>
     </scm>
-
     <profiles>
         <!-- See https://stackoverflow.com/questions/5309379/how-to-keep-maven-profiles-which-are-activebydefault-active-even-if-another-prof -->
         <profile>
@@ -23,15 +21,9 @@
                     <name>!skipSpringBootProfile</name>
                 </property>
             </activation>
-
             <properties>
-<<<<<<< HEAD
-                <spring.boot.version>3.4.2</spring.boot.version>
-=======
                 <spring.boot.version>3.5.4</spring.boot.version>
->>>>>>> master
             </properties>
-
             <dependencyManagement>
                 <dependencies>
                     <dependency>
@@ -43,7 +35,6 @@
                     </dependency>
                 </dependencies>
             </dependencyManagement>
-
             <dependencies>
                 <dependency>
                     <groupId>org.springframework.boot</groupId>
@@ -52,7 +43,6 @@
                 </dependency>
             </dependencies>
         </profile>
-
         <profile>
             <id>spring-boot-single-executable</id>
             <build>
