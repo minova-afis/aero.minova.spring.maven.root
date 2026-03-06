@@ -27,7 +27,7 @@
                 </property>
             </activation>
             <properties>
-                <spring.boot.version>3.5.4</spring.boot.version>
+                <spring.boot.version>3.5.11</spring.boot.version>
             </properties>
             <dependencyManagement>
                 <dependencies>
