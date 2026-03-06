@@ -1,14 +1,20 @@
 name: Release
+run-name: Release ${{ inputs.release-type }}
 on:
   workflow_dispatch:
     inputs:
-      release-version:
-        description: 'Version string of this release'
+      release-type:
+        type: choice
+        description: 'Release Type'
         required: true
-
+        options:
+          - Patch
+          - Minor
+          - Major
 jobs:
   Release:
-    uses: minova-afis/aero.minova.os.github.workflows/.github/workflows/release-pom.yml@main
-    with:
-      release-version: ${{ inputs.release-version }}
+    uses: minova-afis/aero.minova.os.github.workflows/.github/workflows/release-java-based.yml@main
     secrets: inherit
+    with:
+      java-version: '21'
+      release-type: ${{ github.event.inputs.release-type }}
