@@ -18,3 +18,4 @@ jobs:
     with:
       java-version: '21'
       release-type: ${{ github.event.inputs.release-type }}
+
