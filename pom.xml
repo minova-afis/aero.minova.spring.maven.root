@@ -6,7 +6,7 @@
     <parent>
         <groupId>aero.minova</groupId>
         <artifactId>maven.root</artifactId>
-        <version>12.10.0</version>
+        <version>12.11.0</version>
     </parent>
 
     <artifactId>spring.maven.root</artifactId>
@@ -17,6 +17,12 @@
         <connection>scm:git:https://github.com/minova-afis/aero.minova.spring.maven.root.git</connection>
         <tag>HEAD</tag>
     </scm>
+
+    <properties>
+        <java.version>21</java.version>
+        <spring-boot.version>3.5.13</spring-boot.version>
+    </properties>
+
     <profiles>
         <!-- See https://stackoverflow.com/questions/5309379/how-to-keep-maven-profiles-which-are-activebydefault-active-even-if-another-prof -->
         <profile>
@@ -26,15 +32,12 @@
                     <name>!skipSpringBootProfile</name>
                 </property>
             </activation>
-            <properties>
-                <spring.boot.version>3.5.11</spring.boot.version>
-            </properties>
             <dependencyManagement>
                 <dependencies>
                     <dependency>
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-dependencies</artifactId>
-                        <version>${spring.boot.version}</version>
+                        <version>${spring-boot.version}</version>
                         <type>pom</type>
                         <scope>import</scope>
                     </dependency>
@@ -48,6 +51,7 @@
                 </dependency>
             </dependencies>
         </profile>
+
         <profile>
             <id>spring-boot-single-executable</id>
             <build>
@@ -56,7 +60,7 @@
                         <!-- Erstellt ausführbare jar. -->
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-maven-plugin</artifactId>
-                        <version>${spring.boot.version}</version>
+                        <version>${spring-boot.version}</version>
                         <configuration>
                             <!-- Properties Launcher in der Jar verwenden damit man mit "-D*"
                                 JVM-Parameter bspw. die loader.path Property setzen kann. -->
