@@ -17,7 +17,7 @@ Das JDK wird standardmäßig unter `C:\Program Files\OpenJDK\openjdk-21*\` insta
 |---|---|---|
 | 11.3.x | 3.5.16 | Spring Boot 3.5, ohne CVE-Overrides. |
 | 11.4.0 | 3.5.16 | Spring Boot 3.5 mit CVE-Overrides (siehe unten). Letzte Version der 11er-Linie. |
-| 12.0.0 | 4.2.0 | Migration auf Spring Boot 4 (Spring Framework 7, Spring Security 7, Tomcat 11, Jackson 3). Breaking Change. |
+| 12.0.0 | 4.2.0 | Migration auf Spring Boot 4 (Spring Framework 7, Spring Security 7, Tomcat 11, Jackson 3). Breaking Change. Als [Mini-Anleitung Anpassungen im CAS](https://github.com/minova-afis/aero.minova.cas/issues/1504#issuecomment-7192336277). |
 
 ### CVE-Overrides (ab 11.4.0)
 
