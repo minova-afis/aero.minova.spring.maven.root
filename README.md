@@ -5,11 +5,11 @@
 
 ## Einführung
 Diese POM sollte als parent in jedem Dienst oder Applikation direkt verwendet werden.
-Es wird Java 17 verwendet,
+Es wird Java 21 verwendet,
 da dies die [aktuelle LTS Version](https://en.wikipedia.org/wiki/Java_version_history) ist.
 
-Unter Windows mit Chocolatey kann Java 17 über [choco install openjdk17](https://chocolatey.org/packages/openjdk17) installiert werden.
-Das JDK wird standardmäßig unter `C:\Program Files\OpenJDK\openjdk-17*\` installiert.
+Unter Windows mit Chocolatey kann Java 21 über [choco install openjdk21](https://chocolatey.org/packages/openjdk21) installiert werden.
+Das JDK wird standardmäßig unter `C:\Program Files\OpenJDK\openjdk-21*\` installiert.
 
 ## Beispiele
 
