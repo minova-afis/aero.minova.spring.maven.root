@@ -11,6 +11,44 @@ da dies die [aktuelle LTS Version](https://en.wikipedia.org/wiki/Java_version_hi
 Unter Windows mit Chocolatey kann Java 21 über [choco install openjdk21](https://chocolatey.org/packages/openjdk21) installiert werden.
 Das JDK wird standardmäßig unter `C:\Program Files\OpenJDK\openjdk-21*\` installiert.
 
+## Versionen
+
+| Version | Spring Boot | Hinweis |
+|---|---|---|
+| 11.3.x | 3.5.16 | Spring Boot 3.5, ohne CVE-Overrides. |
+| 11.4.0 | 3.5.16 | Spring Boot 3.5 mit CVE-Overrides (siehe unten). Letzte Version der 11er-Linie. |
+| 12.0.0 | 4.2.0 | Migration auf Spring Boot 4 (Spring Framework 7, Spring Security 7, Tomcat 11, Jackson 3). Breaking Change. |
+
+### CVE-Overrides (ab 11.4.0)
+
+Spring Boot 3.5.16 ist der letzte verfügbare Stand der 3.5er-Linie und enthält bekannte Schwachstellen in
+transitiven Abhängigkeiten. Deshalb werden folgende Versionen im Profil `spring-boot` überschrieben:
+
+| Abhängigkeit | Version | Property |
+|---|---|---|
+| Jackson 2 (`com.fasterxml.jackson`) | 2.21.7 | `jackson2.cve.version` |
+| Jackson 3 (`tools.jackson`) | 3.1.7 | `jackson3.cve.version` |
+| Netty | 4.1.137.Final | `netty.cve.version` |
+| Tomcat (`tomcat-embed-core`, `-el`, `-websocket`) | 10.1.59 | `tomcat.cve.version` |
+| httpcore5, httpcore5-h2 | 5.4.3 | `httpcore5.cve.version` |
+| PostgreSQL JDBC | 42.7.12 | `postgresql.cve.version` |
+| org.json | 20231013 | `org-json.cve.version` |
+
+Die Overrides müssen vor dem Import von `spring-boot-dependencies` stehen, da bei importierten BOMs der erste Treffer gewinnt.
+Properties wie `tomcat.version` haben bei einem importierten BOM keine Wirkung.
+Sie können in einem Projekt über die oben genannten Properties angepasst werden.
+
+Nicht behebbar in der 3.5er-Linie: Die CVEs in `spring-webmvc` 6.2.x (Fix nur in Spring Framework 7).
+Diese werden erst mit Version 12.0.0 (Spring Boot 4) gelöst.
+Mit 12.0.0 entfallen die Overrides wieder, da Spring Boot 4.2.0 die Versionen selbst liefert.
+
+### Migration auf 12.0.0 (Spring Boot 4)
+
+Spring Boot 4 bringt unter anderem folgende Änderungen mit, die in den Projekten geprüft werden müssen:
+* Spring Framework 7 und Spring Security 7
+* Tomcat 11
+* Jackson 3 (neue Packages `tools.jackson`)
+
 ## Beispiele
 
 * [CAS](https://github.com/minova-afis/aero.minova.cas)

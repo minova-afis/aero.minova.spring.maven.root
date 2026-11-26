@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>spring.maven.root</artifactId>
-    <version>11.4.1-SNAPSHOT</version>
+    <version>12.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <scm>
@@ -20,15 +20,7 @@
 
     <properties>
         <java.version>21</java.version>
-        <spring-boot.version>3.5.16</spring-boot.version>
-        <!-- CVE-Fixes: überschreiben die von Spring Boot verwalteten Versionen. -->
-        <tomcat.cve.version>10.1.59</tomcat.cve.version>
-        <netty.cve.version>4.1.137.Final</netty.cve.version>
-        <jackson2.cve.version>2.21.7</jackson2.cve.version>
-        <jackson3.cve.version>3.1.7</jackson3.cve.version>
-        <httpcore5.cve.version>5.4.3</httpcore5.cve.version>
-        <postgresql.cve.version>42.7.12</postgresql.cve.version>
-        <org-json.cve.version>20231013</org-json.cve.version>
+        <spring-boot.version>4.2.0</spring-boot.version>
     </properties>
 
     <profiles>
@@ -42,65 +34,6 @@
             </activation>
             <dependencyManagement>
                 <dependencies>
-                    <!-- CVE-Fixes: Müssen VOR dem spring-boot-dependencies-Import stehen (bei Imports gewinnt der
-                         erste Treffer). Properties wie tomcat.version wirken bei einem importierten BOM nicht.
-                         Entfernen, sobald spring-boot.version diese Versionen selbst liefert. -->
-                    <dependency>
-                        <groupId>com.fasterxml.jackson</groupId>
-                        <artifactId>jackson-bom</artifactId>
-                        <version>${jackson2.cve.version}</version>
-                        <type>pom</type>
-                        <scope>import</scope>
-                    </dependency>
-                    <dependency>
-                        <groupId>tools.jackson</groupId>
-                        <artifactId>jackson-bom</artifactId>
-                        <version>${jackson3.cve.version}</version>
-                        <type>pom</type>
-                        <scope>import</scope>
-                    </dependency>
-                    <dependency>
-                        <groupId>io.netty</groupId>
-                        <artifactId>netty-bom</artifactId>
-                        <version>${netty.cve.version}</version>
-                        <type>pom</type>
-                        <scope>import</scope>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.apache.tomcat.embed</groupId>
-                        <artifactId>tomcat-embed-core</artifactId>
-                        <version>${tomcat.cve.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.apache.tomcat.embed</groupId>
-                        <artifactId>tomcat-embed-el</artifactId>
-                        <version>${tomcat.cve.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.apache.tomcat.embed</groupId>
-                        <artifactId>tomcat-embed-websocket</artifactId>
-                        <version>${tomcat.cve.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.apache.httpcomponents.core5</groupId>
-                        <artifactId>httpcore5</artifactId>
-                        <version>${httpcore5.cve.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.apache.httpcomponents.core5</groupId>
-                        <artifactId>httpcore5-h2</artifactId>
-                        <version>${httpcore5.cve.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.postgresql</groupId>
-                        <artifactId>postgresql</artifactId>
-                        <version>${postgresql.cve.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.json</groupId>
-                        <artifactId>json</artifactId>
-                        <version>${org-json.cve.version}</version>
-                    </dependency>
                     <dependency>
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-dependencies</artifactId>
